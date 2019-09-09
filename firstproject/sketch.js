@@ -15,19 +15,31 @@ function setup() {
 
 function draw() {
   if (mouseIsPressed){
-    fill(redamount,0,265);
-    noStroke();
-    ellipse(mouseX, mouseY, 100, 100);
+    if (mouseButton === LEFT)
+      fill(redamount,0,265);
+      noStroke();
+      ellipse(mouseX, mouseY, 100, 100);
 
-    redamount += redchangeamount;
+      redamount += redchangeamount;
 
-    if (redamount >= 255) {
-     redchangeamount *= -1;
+      if (redamount >= 255) {
+      redchangeamount *= -1;
+      }
+      if (redamount <= 0) {
+      redchangeamount *= -1;
+      }
+
+      console.log(redamount);
+
+    if (mouseButton === RIGHT){
+      fill(0,0,0);
+      noStroke()
+      ellipse(mouseX, mouseY, 100, 100)
     }
-    if (redamount <= 0) {
-     redchangeamount *= -1;
     }
 
-    console.log(redamount);
-  }
+
+    
+  
+
 }
