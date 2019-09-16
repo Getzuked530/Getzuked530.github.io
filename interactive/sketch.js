@@ -18,7 +18,10 @@ function draw() {
   background(bkColour);
   imageMode(CENTER);
   image(kitty, width / 2, height / 2, sizeW, sizeH);
-  text(message, width / 2, 100,)
+
+  textSize(32);
+  textAlign(CENTER, TOP)
+  text(message, width / 2,  100,);
  
   }
 
