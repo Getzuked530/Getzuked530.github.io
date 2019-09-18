@@ -2,8 +2,9 @@ let kitty;
 let sizeW = 175;
 let sizeH = 200;
 let bkColour = 255;
-let message = "Click Kitty to Pet Him :)";
+let bgMessage = "Click Kitty to Pet Him :)";
 let kittyHurt;
+let hurtMessage = ["owie", "HOW COULD YOU", "YOU BASTARD YOU HURT HIM", "YOU LIKE HITTING KITTIES HUH", ];
 
 function preload() {
   kitty = loadImage("assets/kitty.png");
@@ -23,7 +24,7 @@ function draw() {
 
   textSize(32);
   textAlign(CENTER, TOP);
-  text(message, width / 2,  100,);
+  text(bgMessage, width / 2,  100,);
  
   }
 
@@ -33,22 +34,10 @@ function mouseClicked(){
   kittyHurt = loadImage("assets/DeadCat.jpg");
   kitty = kittyHurt;
 
-  message = "YOU KICKED THE KITTY YOU PRICK"
- 
+  bgMessage = random(hurtMessage);
+
+  
   
 }
 
-
-  
-
-
-
-
-
-
-
-
-    
-  
-
-
+ 
