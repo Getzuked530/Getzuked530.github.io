@@ -4,10 +4,10 @@ let sizeH = 200;
 let bkColour = 255;
 let bgMessage = "Click Kitty to Pet Him :)";
 let kittyHurt;
-let hurtMessage = ["OOOOW", "HOW COULD YOU", "YOU BASTARD YOU HURT HIM", "YOU LIKE HITTING KITTIES HUH", ];
-let hmSave;
+let hurtMessage = ["OOOOW", "HOW COULD YOU", "YOU BASTARD YOU HURT HIM", "YOU LIKE HITTING KITTIES HUH","YOU MONSTER","WHY ARE YOU SO MEAN HURTING THIS POOR BOY" ];
 let hmLast;
 let hmNew;
+let soundList = ["a","b","c","d","e"];
 
 function preload() {
   kitty = loadImage("assets/kitty.png");
@@ -17,7 +17,6 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  hmLast = "null";  
 }
 
 function draw() {
@@ -40,19 +39,21 @@ function mouseClicked(){
 
   
   bgMessage = random(hurtMessage);
-  hmNew = bgMessage 
+  hmNew = bgMessage; 
 
 
-  if (hmLast == hmNew );{
+  if (hmLast === hmNew ){
+
+
     console.log("dupe");
   }
-  
+
+  hmLast = hmNew;
+  console.log(hmLast);
 
  // hmLast = bgMessage;
  // console.log(hmLast);
 
-  
-  
 }
 
  
