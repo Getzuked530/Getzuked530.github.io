@@ -11,6 +11,7 @@ let soundList = ["a","b","c","d","e"];
 
 function preload() {
   kitty = loadImage("assets/kitty.png");
+  kittyHurt = loadImage("assets/DeadCat.jpg");
 
   
 }
@@ -34,7 +35,7 @@ function mouseClicked(){
   
   bkColour = "red"
 
-  kittyHurt = loadImage("assets/DeadCat.jpg");
+  
   kitty = kittyHurt;
 
   
@@ -42,7 +43,9 @@ function mouseClicked(){
   hmNew = bgMessage; 
 
 
-  if (hmLast === hmNew ){
+  while (hmLast === hmNew ){
+    hmNew = random(hurtMessage);
+    bgMessage = hmNew;
 
 
     console.log("dupe");
@@ -56,4 +59,3 @@ function mouseClicked(){
 
 }
 
- 
