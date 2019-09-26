@@ -6,7 +6,7 @@ let sizeH = 200;
 let bkColour = 255;
 let bgMessage = "Click Kitty to Pet Him :)";
 let kittyHurt;
-let hurtMessage = ["OOOOW", "HOW COULD YOU", "YOU BASTARD YOU HURT HIM", "YOU LIKE HITTING KITTIES HUH","YOU MONSTER","WHY ARE YOU SO MEAN HURTING THIS POOR BOY" ];
+let hurtMessage = ["WHAT KIND OF HORRIBLE PERSON HITS A CAT", "HOW COULD YOU", "YOU BASTARD YOU HURT HIM", "YOU LIKE HITTING KITTIES HUH","YOU MONSTER","WHY ARE YOU SO MEAN HURTING THIS POOR BOY" ];
 let hmLast;
 let hmNew;
 let see = false;
