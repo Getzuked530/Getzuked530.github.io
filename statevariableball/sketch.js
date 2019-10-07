@@ -62,7 +62,7 @@ function checkIfButtonClicked(){
           state = "rectangle";
         }
 
-     // check rectangle button
+     // check circle button
      if (mouseX > width/2 - 200 && mouseX < width/2 + 200 &&
       mouseY > height/2 + 100 - 75 && mouseY < height/2 + 100 + 75){
         state = "circle";

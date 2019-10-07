@@ -5,20 +5,22 @@ noEscape = "Options? What options? You are playing a Shrek dating sim. What did 
 
 function setup() {
   createCanvas(windowWidth, windowHeight)
+  background(255)
 
 }
 
 function windowResized(){
   setup();
 
-  startMenu();
+  
 }
 
 function draw() {
-  background(255)
+  
 
   if (menuState === "startMenu"){
     startMenu();
+    console.log("dumbbitch")
   }
 
   else if (menuState === "game"){
@@ -27,7 +29,9 @@ function draw() {
   }
 
   else if (menuState === "options"){
+    
     showOptions();
+    
 
   }
 
@@ -42,10 +46,16 @@ function startMenu(){
   rect(width/2 + 200, height/2 , 300, 150)
 }
 
+
+
+
 function showOptions(){
-  textAlign(CENTER, TOP,);
-  textSize(30)
-  text("hello world")
+  background("white")
+  textAlign(CENTER);
+  textSize(30);
+  fill(0)
+  text(noEscape, width/2, height/2);
+  console.log("deaf");
 
   
 }
