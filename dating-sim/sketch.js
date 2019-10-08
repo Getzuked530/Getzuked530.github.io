@@ -1,13 +1,24 @@
-
-menuState = "startMenu";
-noEscape = "Options? What options? You are playing a Shrek dating sim. What did you think you would find in here.";
-
+let whatScene;
+let menuState = "startMenu";
+let noEscape = "Options? What options? You are playing a Shrek dating sim. What did you think you would find in here.";
+let normalShrek;
+let angryShrek;
+let willShieck;
+let swampBack;
 
 function setup() {
   createCanvas(windowWidth, windowHeight)
   background(255)
 
 }
+
+function preload(){
+  normalShrek = loadImage("assets/standingShrek.png")
+  swampBack = loadImage("assets/phatswamp.jpg")
+}
+
+
+
 
 function windowResized(){
   setup();
@@ -38,6 +49,9 @@ function draw() {
 }
 
 function startMenu(){
+  imageMode(CENTER)
+  image(swampBack, height/2, width/2, 500, 400,)
+
   rectMode(CENTER);
   fill(0, 0, 255, 200);
   rect(width/2 - 200, height/2 , 300, 150)
@@ -45,9 +59,6 @@ function startMenu(){
   fill(0, 0, 255, 200);
   rect(width/2 + 200, height/2 , 300, 150)
 }
-
-
-
 
 function showOptions(){
   background("white")
