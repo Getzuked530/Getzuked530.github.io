@@ -29,8 +29,9 @@ function windowResized(){
 function draw() {
   
 
-  if (menuState === "startMenu"){
+   if (menuState === "startMenu"){
     startMenu();
+    checkIfButtonClicked();
     console.log("dumbbitch")
   }
 
@@ -46,18 +47,50 @@ function draw() {
 
   }
 
+
+ 
+
 }
 
 function startMenu(){
-  imageMode(CENTER)
-  image(swampBack, height/2, width/2, 500, 400,)
+  
 
+  //show start button
   rectMode(CENTER);
-  fill(0, 0, 255, 200);
-  rect(width/2 - 200, height/2 , 300, 150)
+  fill(0, 255, 0, 125)
+  rect(width/2, height/2 - 100, 400, 150);
+  textAlign(CENTER, CENTER);
+  textSize(50);
+  fill(0);
+  text("Start Game", width/2, height/2 - 100);
 
-  fill(0, 0, 255, 200);
-  rect(width/2 + 200, height/2 , 300, 150)
+  
+
+
+  //Show Options button
+  fill(0, 255, 0, 125);
+  rect(width/2, height/2 + 100, 400, 150);
+  fill(0);
+  text("Options", width/2, height/2 + 100);
+
+  textAlign(CENTER, TOP)
+  text("Welcome to Hell on Earth", width/2, 100)
+}
+
+function checkIfButtonClicked(){
+  if (mouseIsPressed){
+    // check start button
+    if (mouseX > width/2 - 200 && mouseX < width/2 + 200 &&
+        mouseY > height/2 - 100 - 75 && mouseY < height/2 - 100 +75){
+          menuState = "startGame";
+        }
+
+     // check options button
+     if (mouseX > width/2 - 200 && mouseX < width/2 + 200 &&
+      mouseY > height/2 + 100 - 75 && mouseY < height/2 + 100 + 75){
+        menuState = "options";
+  }
+}
 }
 
 function showOptions(){
@@ -65,8 +98,19 @@ function showOptions(){
   textAlign(CENTER);
   textSize(30);
   fill(0)
-  text(noEscape, width/2, height/2);
+  text(noEscape, width/2, height/2 - 100);
   console.log("deaf");
+
+  textAlign(CENTER);
+  text("Like seriously what?", width/2, height/2)
+
+  textAlign(CENTER);
+  text("I can give you the option to leave if you want?", width/2, height/2 + 100)
+
+  if (keyIsPressed){
+    window.open('https://www.cbi.ca/services/mental-health');
+  }
 
   
 }
+
