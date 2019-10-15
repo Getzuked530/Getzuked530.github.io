@@ -5,6 +5,7 @@ let normalShrek;
 let angryShrek;
 let willShieck;
 let swampBack;
+let websiteArray;
 
 function setup() {
   createCanvas(windowWidth, windowHeight)
@@ -28,6 +29,7 @@ function windowResized(){
 
 function draw() {
   
+  
 
    if (menuState === "startMenu"){
     startMenu();
@@ -35,8 +37,8 @@ function draw() {
     console.log("dumbbitch")
   }
 
-  else if (menuState === "game"){
-    showGame();
+  else if (menuState === "startGame"){
+    showGame(); 
 
   }
 
@@ -83,6 +85,7 @@ function checkIfButtonClicked(){
     if (mouseX > width/2 - 200 && mouseX < width/2 + 200 &&
         mouseY > height/2 - 100 - 75 && mouseY < height/2 - 100 +75){
           menuState = "startGame";
+          console.log("hecker")
         }
 
      // check options button
@@ -109,8 +112,12 @@ function showOptions(){
 
   if (keyIsPressed){
     window.open('https://www.cbi.ca/services/mental-health');
+    keyIsPressed = false;
   }
 
   
 }
 
+function showGame(){
+  background("black")
+}
