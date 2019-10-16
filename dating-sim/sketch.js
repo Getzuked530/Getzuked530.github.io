@@ -5,7 +5,8 @@ let normalShrek;
 let angryShrek;
 let willShieck;
 let swampBack;
-let websiteArray;
+let websiteArray = ['https://www.cbi.ca/services/mental-health', 'https://en.wikipedia.org/wiki/Insanity','https://www.joemamaspizza.com/','https://www.youtube.com/watch?v=iqKdEhx-dD4', 'https://blog.upperlinecode.com/top-10-tips-for-your-first-year-teaching-computer-science-7225d57c65e5'];
+let myVideo;
 
 function setup() {
   createCanvas(windowWidth, windowHeight)
@@ -33,29 +34,32 @@ function draw() {
 
    if (menuState === "startMenu"){
     startMenu();
-    checkIfButtonClicked();
+    checkIfMenuButtonClicked();
     console.log("dumbbitch")
   }
 
   else if (menuState === "startGame"){
     showGame(); 
-
   }
 
   else if (menuState === "options"){
     
     showOptions();
-    
-
+  
   }
 
-
- 
 
 }
 
 function startMenu(){
   
+  imageMode(CENTER)
+  image(swampBack, windowWidth/2, windowHeight/2, windowWidth, windowHeight)
+
+  textAlign(CENTER, TOP)
+  fill("white")
+  stroke("black")
+  text("Welcome to Hell on Earth aka Shrek Dating Sim", width/2, 100)
 
   //show start button
   rectMode(CENTER);
@@ -75,11 +79,10 @@ function startMenu(){
   fill(0);
   text("Options", width/2, height/2 + 100);
 
-  textAlign(CENTER, TOP)
-  text("Welcome to Hell on Earth", width/2, 100)
+  
 }
 
-function checkIfButtonClicked(){
+function checkIfMenuButtonClicked(){
   if (mouseIsPressed){
     // check start button
     if (mouseX > width/2 - 200 && mouseX < width/2 + 200 &&
@@ -98,9 +101,15 @@ function checkIfButtonClicked(){
 
 function showOptions(){
   background("white")
+
+  imageMode(CENTER)
+  image(swampBack, windowWidth/2, windowHeight/2, windowWidth, windowHeight)
+
+
   textAlign(CENTER);
   textSize(30);
-  fill(0)
+  fill("white");
+  stroke("black");
   text(noEscape, width/2, height/2 - 100);
   console.log("deaf");
 
@@ -110,14 +119,56 @@ function showOptions(){
   textAlign(CENTER);
   text("I can give you the option to leave if you want?", width/2, height/2 + 100)
 
-  if (keyIsPressed){
-    window.open('https://www.cbi.ca/services/mental-health');
-    keyIsPressed = false;
-  }
+  textAlign(CENTER);
+  text("Try typing any number from 1 to 5 included.", width/2, height/2 + 200)
+
+  
+  keyTyped();
 
   
 }
 
 function showGame(){
   background("black")
+  
+
+
+
 }
+
+function keyTyped(){
+  if (key === '1'){
+    console.log("webas")
+    window.open(websiteArray[0])
+    key = !key;
+    
+  }
+  else if (key === '2'){
+    window.open(websiteArray[1])
+    key = !key;
+  }
+  else if (key ==='3'){
+    window.open(websiteArray[2])
+    key = !key;
+  }
+  else if(key === '4'){
+    window.open(websiteArray[3])
+    key = !key;
+  }
+  else if(key === '5'){
+    window.open(websiteArray[4])
+    key = !key;
+  }
+}
+
+// myVideo = createVideo(
+//   ['assets/zavala.mp4'], 
+//   vidload
+// );
+
+// myVideo.size(500,500);
+
+// function myVideoLoad(){
+
+// }
+
