@@ -12,6 +12,10 @@ function setup() {
   createCanvas(windowWidth, windowHeight)
   background(255)
 
+  myVideo = createVideo('assets/zavala.mp4');
+ 
+  
+
 }
 
 function preload(){
@@ -129,10 +133,10 @@ function showOptions(){
 }
 
 function showGame(){
-  background("black")
-  
+  background("black");
 
-
+  myVideo.loop(0);
+  myVideo.size(500,500);
 
 }
 
@@ -161,14 +165,12 @@ function keyTyped(){
   }
 }
 
-// myVideo = createVideo(
-//   ['assets/zavala.mp4'], 
-//   vidload
-// );
 
-// myVideo.size(500,500);
 
-// function myVideoLoad(){
+function myVideoLoad(){
+  myVideo.loop(0);
+  myVideo.volume(0);
+  console.log('chadio')
 
-// }
+}
 
