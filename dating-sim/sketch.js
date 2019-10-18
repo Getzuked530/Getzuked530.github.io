@@ -1,6 +1,6 @@
 let whatScene;
 let menuState = "startMenu";
-let noEscape = "Options? What options? You are playing a Shrek dating sim. What did you think you would find in here.";
+let noEscape = "Options? What options? You are playing a game desinged by me. What did you think you would find in here.";
 let normalShrek;
 let angryShrek;
 let willShieck;
@@ -8,14 +8,15 @@ let swampBack;
 let websiteArray = ['https://www.cbi.ca/services/mental-health', 'https://en.wikipedia.org/wiki/Insanity','https://www.joemamaspizza.com/','https://www.youtube.com/watch?v=iqKdEhx-dD4', 'https://blog.upperlinecode.com/top-10-tips-for-your-first-year-teaching-computer-science-7225d57c65e5'];
 let myVideo;
 
+
 function setup() {
-  createCanvas(windowWidth, windowHeight)
+  canvasWidth = windowWidth;
+  canvasHeight = windowHeight;
+  createCanvas(canvasWidth, canvasHeight)
   background(255)
 
-  myVideo = createVideo('assets/zavala.mp4');
+  //myVideo = createVideo('assets/zavala.mp4');
  
-  
-
 }
 
 function preload(){
@@ -23,13 +24,8 @@ function preload(){
   swampBack = loadImage("assets/phatswamp.jpg")
 }
 
-
-
-
 function windowResized(){
   setup();
-
-  
 }
 
 function draw() {
@@ -49,9 +45,7 @@ function draw() {
   else if (menuState === "options"){
     
     showOptions();
-  
   }
-
 
 }
 
@@ -73,9 +67,6 @@ function startMenu(){
   textSize(50);
   fill(0);
   text("Start Game", width/2, height/2 - 100);
-
-  
-
 
   //Show Options button
   fill(0, 255, 0, 125);
@@ -135,8 +126,10 @@ function showOptions(){
 function showGame(){
   background("black");
 
-  myVideo.loop(0);
-  myVideo.size(500,500);
+  
+
+  //myVideo.loop(0);
+  //myVideo.size(500,500);
 
 }
 
@@ -163,14 +156,17 @@ function keyTyped(){
     window.open(websiteArray[4])
     key = !key;
   }
+
+  else if(menuState === 'options' && keyCode === 8){
+    menuState = "startMenu";
+    keyCode = !keyCode;
+  }
 }
 
 
+// function myVideoLoad(){
+//   myVideo.loop(0);
+//   myVideo.volume(0);
+//   console.log('chadio')
 
-function myVideoLoad(){
-  myVideo.loop(0);
-  myVideo.volume(0);
-  console.log('chadio')
-
-}
-
+// }
