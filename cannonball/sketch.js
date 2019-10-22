@@ -24,6 +24,13 @@ function draw(){
   displayCannon();
   updateBullets();
   fire();
+
+  for  (let i = bullets.length - 1; i > 0; i--){
+    if (bullets[i].x > windowWidth || bullets[i].y > windowHeight || bullets[i].x < 0 || bullets[i].y < 0){
+    bullets.splice(i, 1)
+    }
+  
+  }
 }
 
 function displayCannon() {
@@ -46,7 +53,7 @@ function fire(){
     y: cannonY,
     radius: cannonWidth,
     angle: cannonAngle,
-    speed: 5,
+    speed: .5,
   };
   bullets.push(thisBullet)
 }
