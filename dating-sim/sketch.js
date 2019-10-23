@@ -5,7 +5,7 @@ let normalShrek;
 let angryShrek;
 let willShieck;
 let swampBack;
-let websiteArray = ['https://www.cbi.ca/services/mental-health', 'https://en.wikipedia.org/wiki/Insanity','https://www.joemamaspizza.com/','https://www.youtube.com/watch?v=iqKdEhx-dD4', 'https://blog.upperlinecode.com/top-10-tips-for-your-first-year-teaching-computer-science-7225d57c65e5'];
+let websiteArray = ['https://www.ebay.ca/itm/SHREK-VHS-TAPE-CLAMSHELL-EDITION/372703462738?hash=item56c6db8552:g:2gQAAOSwAy9dHYRo', 'https://en.wikipedia.org/wiki/Insanity','https://www.joemamaspizza.com/','https://www.youtube.com/watch?v=iqKdEhx-dD4', 'https://blog.upperlinecode.com/top-10-tips-for-your-first-year-teaching-computer-science-7225d57c65e5'];
 let myVideo;
 
 
