@@ -15,7 +15,7 @@ function setup() {
 function draw() {
   background(220);
   displayGrid(grid, rows, cols);
-  update();
+  
 }
 
 function windowResized() {
