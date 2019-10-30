@@ -94,3 +94,7 @@ function createEmptyGrid() {
   }
   return emptyGrid;
 }
+
+function checkerLayout() {
+  
+}
