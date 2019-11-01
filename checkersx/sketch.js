@@ -1,6 +1,8 @@
 let grid;
 let rows = 15;
 let cols = 15;
+let turnState;
+
 
 function setup() {
   if (windowWidth > windowHeight) {
@@ -73,12 +75,7 @@ function createBoard(cols, rows) {
   for (let x = 0; x < cols; x++) {
     boardGrid.push([]);
     for (let y = 0; y < rows; y++) {
-      if (random(100) < 50) {
-        boardGrid[x].push(1);
-      }
-      else {
-        boardGrid[x].push(0);
-      }
+      boardGrid[x].push(1)
     }
   }
   return boardGrid;
@@ -98,3 +95,17 @@ function createEmptyGrid() {
 function checkerLayout() {
   
 }
+
+function isDead() {
+
+
+}
+
+function checkerPicked(){
+
+}
+
+function whosTurn() {
+
+}
+
