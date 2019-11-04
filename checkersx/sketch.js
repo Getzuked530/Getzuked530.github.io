@@ -2,6 +2,7 @@ let grid;
 let rows = 15;
 let cols = 15;
 let turnState;
+let gvar = true;
 
 
 function setup() {
@@ -75,7 +76,18 @@ function createBoard(cols, rows) {
   for (let x = 0; x < cols; x++) {
     boardGrid.push([]);
     for (let y = 0; y < rows; y++) {
-      boardGrid[x].push(1)
+      if(gvar === true){
+        console.log("push0")
+        boardGrid[x].push(0);
+        gvar = false 
+      }
+      else{
+        console.log("push1")
+        boardGrid[x].push(1);
+        gvar = true
+        
+      }
+
     }
   }
   return boardGrid;
