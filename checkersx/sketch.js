@@ -1,6 +1,6 @@
 let grid;
-let rows = 15;
-let cols = 15;
+let rows = 10;
+let cols = 10;
 let turnState;
 let gvar = true;
 
@@ -12,7 +12,7 @@ function setup() {
   else {
     createCanvas(windowWidth, windowWidth);
   }
-  grid = createBoard(cols, rows);
+  grid = createEmptyGrid(cols, rows);
 }
 
 function draw() {
@@ -38,34 +38,51 @@ function keyTyped() {
     grid = createEmptyGrid();
   }
   
-}
-
-function mousePressed() {
-  let cellSize = width/cols;
-
-  let xCoord = floor(mouseX / cellSize);
-  let yCoord = floor(mouseY / cellSize);
+  if (key === "a") {
+    makeMenuP1();
+  }
   
-  if (grid[yCoord][xCoord] === 1) {
-    grid[yCoord][xCoord] = 0;
-  }
-  else {
-    grid[yCoord][xCoord] = 1;
+  if (key === "b"){
+    makeMenuP2();
   }
 }
+
+// function mousePressed() {
+//   let cellSize = width/cols;
+
+//   let xCoord = floor(mouseX / cellSize);
+//   let yCoord = floor(mouseY / cellSize);
+  
+//   if (grid[yCoord][xCoord] === 1) {
+//     grid[yCoord][xCoord] = 0;
+//   }
+//   else {
+//     grid[yCoord][xCoord] = 1;
+//   }
+// }
 
 
 
 function displayGrid(grid, rows, cols) {
+  let white = true;
+  
   let cellSize = width / cols;
   for (let y = 0; y < rows; y++) {
+    white = !white;
     for (let x = 0; x < cols; x++) {
       if (grid[y][x] === 0) {
-        fill(255);
+        if (white){
+          fill(255);
+        
+        }
+        else {
+          fill(0);
+        }
+        white = !white;
       }
-      else {
-        fill(0);
-      }
+      // else {
+        //   fill(0);
+        // }
       rect(x*cellSize, y*cellSize, cellSize, cellSize);
     }
   }
@@ -121,3 +138,12 @@ function whosTurn() {
 
 }
 
+
+function makeMenuP1(){
+  console.log("owo");
+
+}
+
+function makeMenuP2(){
+  console.log("menuuo")
+}
