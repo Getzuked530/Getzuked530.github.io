@@ -18,7 +18,7 @@ function setup() {
 function draw() {
   background(220);
   displayGrid(grid, rows, cols);
-  
+  checkerLayout();
 }
 
 function windowResized() {
@@ -68,7 +68,7 @@ function displayGrid(grid, rows, cols) {
   
   let cellSize = width / cols;
   for (let y = 0; y < rows; y++) {
-    white = !white;
+     white = !white;
     for (let x = 0; x < cols; x++) {
       if (grid[y][x] === 0) {
         if (white){
@@ -122,7 +122,8 @@ function createEmptyGrid() {
 }
 
 function checkerLayout() {
-  
+  fill("red")
+  ellipse(0, 0, 50)
 }
 
 function isDead() {
