@@ -3,7 +3,8 @@ let rows = 10;
 let cols = 10;
 let turnState;
 let gvar = true;
-
+let showingMenuOne = false;
+let showingMenuTwo = false;
 
 function setup() {
   if (windowWidth > windowHeight) {
@@ -19,6 +20,14 @@ function draw() {
   background(220);
   displayGrid(grid, rows, cols);
   checkerLayout();
+ 
+  if (showingMenuOne){
+    makeMenuP1();
+  }
+
+  if (showingMenuTwo){
+    makeMenuP2();
+  }
 }
 
 function windowResized() {
@@ -39,11 +48,21 @@ function keyTyped() {
   }
   
   if (key === "a") {
-    makeMenuP1();
+    if (showingMenuOne === false){
+      showingMenuOne = true;
+    }
+    else {
+      showingMenuOne = false;
+    }
   }
   
   if (key === "b"){
-    makeMenuP2();
+    if (showingMenuTwo === false){
+      showingMenuTwo = true;
+    }
+    else {
+      showingMenuTwo = false;
+    }
   }
 }
 
@@ -80,9 +99,6 @@ function displayGrid(grid, rows, cols) {
         }
         white = !white;
       }
-      // else {
-        //   fill(0);
-        // }
       rect(x*cellSize, y*cellSize, cellSize, cellSize);
     }
   }
@@ -141,10 +157,13 @@ function whosTurn() {
 
 
 function makeMenuP1(){
+  fill(255,255,255, 100);
+  rect(0, 0, 200, 500);
   console.log("owo");
-
 }
 
 function makeMenuP2(){
+  fill(255,255,255, 100);
+  rect(width - 200, 0, 200, 500);
   console.log("menuuo")
 }
