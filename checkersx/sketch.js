@@ -5,6 +5,11 @@ let turnState;
 let gvar = true;
 let showingMenuOne = false;
 let showingMenuTwo = false;
+let p1Vbucks = 0;
+let p2Vbucks = 0;
+let p1Money = 1000;
+let p2Money = 1000;
+
 
 function setup() {
   if (windowWidth > windowHeight) {
@@ -157,9 +162,16 @@ function whosTurn() {
 
 
 function makeMenuP1(){
-  fill(255,255,255, 100);
+  fill(255,255,255, 225);
   rect(0, 0, 200, 500);
   console.log("owo");
+
+  rect(10, 10, 75, 75,)
+
+  fill("green")
+  textSize(20)
+  textStyle(BOLD)
+  text("Your Money " + p1Money, 10, 400,)
 }
 
 function makeMenuP2(){
