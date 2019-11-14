@@ -5,7 +5,7 @@ let cannonLength ;
 let cannonAngle;
 let bullets = [];
 
-
+// steven has a stinky bum hole
 function setup(){
 
   createCanvas(windowWidth, windowHeight)
